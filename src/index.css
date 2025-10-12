@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-asad: #caeb66;
+}
+
+body{
+    background: rgba(234, 236, 237, 1);
+    font-family: "Urbanist", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+};

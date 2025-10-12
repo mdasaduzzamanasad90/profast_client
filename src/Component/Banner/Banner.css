@@ -1,0 +1,24 @@
+.swiper-button-prev,
+.swiper-button-next {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: rgba(202, 235, 102);
+}
+
+.banner-container:hover .swiper-button-prev,
+.banner-container:hover .swiper-button-next {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .banner-container:hover .swiper-button-prev,
+  .banner-container:hover .swiper-button-next {
+     opacity: 1;
+    transform: scale(0.5); /* hover করলে normal size হবে */
+  }
+}
