@@ -44,9 +44,16 @@ const SalesTeams = () => {
     },
   ];
 
+
+  // ডাইনামিক gradient color
+  
+
   return (
-    <div className="text-center md:mb-20 my-6">
-      <h1 className="text-xl md:text-3xl font-semibold md:mb-20 mb-6">
+    <div className="text-center md:mt-36 my-6">
+      <h1
+        data-aos="fade-up"
+        className="text-xl md:text-3xl font-semibold md:mb-20 mb-6"
+      >
         We've helped thousands of sales teams
       </h1>
 
@@ -55,11 +62,15 @@ const SalesTeams = () => {
         pauseOnHover={true}
         speed={30}
         gradient={true}
-        gradientColor="#EAECED"
+        gradientColor=""
         gradientWidth={150}
       >
         {companylogoimage.map((image, index) => (
           <img
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="300"
+            data-aos-offset="0"
             key={index}
             src={image}
             alt={`Company logo ${index + 1}`}
@@ -69,7 +80,7 @@ const SalesTeams = () => {
       </Marquee>
 
       {/* Service details */}
-      <div className="border-y-2 md:rounded-[80px] rounded-[20px] border-dotted md:py-20 py-6 flex flex-col justify-center items-center gap-5 md:gap-10 transition-all duration-700 ease-in-out md:mt-32 mt-10">
+      <div className="border-y-2 md:rounded-[80px] rounded-[20px] border-dotted md:py-20 py-6 flex flex-col justify-center items-center gap-5 md:gap-10 transition-all duration-700 ease-in-out md:mt-20   mt-10">
         {websiteservicedetails.map((servicedetail, index) => (
           <div
             key={servicedetail.id}
@@ -81,7 +92,7 @@ const SalesTeams = () => {
                 : "fade-right"
             }
           >
-            <div className="group md:gap-10 flex flex-col md:flex-row bg-white items-center text-center md:text-left hover:scale-105 transition-transform duration-500 ease-in-out p-6 md:p-10 rounded-lg shadoweffects">
+            <div className="group shadoweffectsnormal md:gap-10 flex flex-col md:flex-row bg-white items-center text-center md:text-left hover:scale-105 transition-transform duration-500 ease-in-out p-6 md:p-10 rounded-lg shadoweffects">
               {/* service image + divider */}
               <div className="md:flex gap-5 items-center md:items-start mb-4 md:mb-0">
                 <img

@@ -11,7 +11,7 @@ import img3 from "../../assets/banner/banner3.png";
 const Banner = () => {
   const bannerimg = [img1, img2, img3];
   return (
-    <div className="banner-container">
+    <div className="banner-container md:mt-24 md:h-[600px] h-[300px]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -31,7 +31,7 @@ const Banner = () => {
             <img
               src={img}
               alt={`Banner ${index + 1}`}
-              className=""
+              className="h-full object-cover md:rounded-[40px]"
             />
           </SwiperSlide>
         ))}

@@ -45,7 +45,7 @@ const HowItWorks = () => {
   return (
     <div
       data-aos="zoom-in-up"
-      className="bg-gray-50 py-12 px-6 lg:px-20 mt-5 md:mt-32"
+      className="py-12 px-6 lg:px-20 md:mt-20"
     >
       <h1 className="text-3xl md:text-5xl font-bold text-center mb-12">
         How it Works
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                 </div>
 
                 {/* title কে equal height করতে */}
-                <h3 className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-semibold mb-2 min-h-[60px] flex items-center justify-center">
+                <h3 className="text-xl text-black sm:text-2xl md:text-xl lg:text-2xl font-semibold mb-2 min-h-[60px] flex items-center justify-center">
                   {item.tittle}
                 </h3>
 

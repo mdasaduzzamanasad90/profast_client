@@ -19,21 +19,38 @@ const CustomerSaying = () => {
   }, []);
 
   return (
-    <div className="text-center py-8 px-4 md:mt-16">
+    <div className="text-center py-8 px-4 md:mt-28">
       <img
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-offset="0"
         src={customerSayingImageHeader}
         alt="Customer Saying Header"
         className="mx-auto mb-6"
       />
-      <h1 className="md:text-4xl text-2xl font-bold mb-4">
+      <h1
+        data-aos="fade-up"
+        data-aos-delay="1300"
+        className="md:text-4xl text-2xl font-bold mb-4"
+      >
         What our customers are saying
       </h1>
-      <p className="text-gray-700 max-w-xl mx-auto">
+      <p
+        data-aos="fade-up"
+        data-aos-delay="1300"
+        className="opacity-80 max-w-xl mx-auto"
+      >
         Enhance posture, mobility, and well-being effortlessly with Posture Pro.
         Achieve proper alignment, reduce pain, and strengthen your body with
         ease!
       </p>
-      <div>
+      <div
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="1300"
+        data-aos-offset="0"
+        className="md:h-[500px]"
+      >
         <Swiper
           slidesPerView={3}
           spaceBetween={10}

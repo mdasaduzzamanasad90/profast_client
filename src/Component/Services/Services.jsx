@@ -49,14 +49,14 @@ const Services = () => {
   return (
     <div
       data-aos="zoom-in-up"
-      className="px-4 sm:px-6 lg:px-20 md:mt-28 md:mb-32"
+      className="px-4 sm:px-6 lg:px-20 md:mt-20"
     >
       {/* Heading */}
       <div className="text-center mt-6 md:mt-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4">
           Our Services
         </h1>
-        <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg opacity-80 max-w-xl mx-auto">
           Enjoy fast, reliable parcel delivery with real-time tracking and zero
           hassle. From personal packages to business shipments — we deliver on
           time, every time.
@@ -72,7 +72,7 @@ const Services = () => {
             data-aos-delay={index * 200} // smooth stagger animation
             className="h-full"
           >
-            <div className="flex flex-col justify-between items-center text-center p-4 sm:p-5 md:p-6 bg-white border border-gray-100 rounded-xl md:rounded-2xl shadow-md hover:shadow-2xl hover:bg-[#CAEB66] hover:border-[#CAEB66] transition duration-500 ease-in-out transform hover:-translate-y-2 h-full">
+            <div className="flex text-black flex-col justify-between items-center text-center p-4 sm:p-5 md:p-6 bg-white border border-gray-100 rounded-xl md:rounded-2xl shadow-md hover:shadow-2xl hover:bg-[#CAEB66] hover:border-[#CAEB66] transition duration-500 ease-in-out transform hover:-translate-y-2 h-full">
               {/* Icon container */}
               <div
                 className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full mb-3 ${iconData[index]?.bg}`}

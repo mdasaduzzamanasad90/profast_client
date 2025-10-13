@@ -1,12 +1,12 @@
 const Faq = () => {
   return (
-    <section className="mb-32">
+    <section className="md:mb-40">
       {/* Section Header */}
       <div className="text-center mb-12" data-aos="fade-up">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Frequently Asked Questions
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="max-w-2xl mx-auto opacity-80">
           Enhance posture, mobility, and well-being effortlessly with Posture
           Pro. Achieve proper alignment, reduce pain, and strengthen your body
           with ease!
