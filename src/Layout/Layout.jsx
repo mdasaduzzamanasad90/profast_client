@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import Navbar from "../ShareComponent/Navbar/Navbar";
-import Footer from "../ShareComponent/Footer/Footer";
 
 const Layout = () => {
   return (
@@ -9,7 +8,6 @@ const Layout = () => {
         <Navbar></Navbar>
       </div>
       <Outlet></Outlet>
-      <Footer></Footer>
     </div>
   );
 };
