@@ -2,7 +2,7 @@ import Navbar from "../../ShareComponent/Navbar/Navbar";
 
 const Error = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen md:max-w-7xl mx-auto">
       <Navbar></Navbar>
       <div className="flex items-center justify-center bg-white md:mt-32 md:rounded-[40px]">
         <svg
