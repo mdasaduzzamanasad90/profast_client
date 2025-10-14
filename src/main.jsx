@@ -5,7 +5,6 @@ import router from "./Router/Router.jsx";
 import { RouterProvider } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Footer from "./ShareComponent/Footer/Footer.jsx";
 
 AOS.init({
   duration: 1000,
@@ -18,9 +17,6 @@ AOS.init({
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className="md:max-w-7xl mx-auto">
-      <RouterProvider router={router} />
-    </div>
-    <Footer></Footer>
+    <RouterProvider router={router} />
   </StrictMode>
 );

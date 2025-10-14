@@ -3,9 +3,13 @@ import Layout from "../Layout/Layout";
 import Home from "../Page/Home/Home";
 import Error from "../Page/Error/Error";
 import About from "../Component/About/About";
-import DashboradLayout from "../Layout/DashboradLayout";
-import Dashborad from "../DashboradPage/Dashborad/Dashborad";
 import User from "../DashboradPage/User/User";
+import LoginLayout from "../Layout/LoginLayout";
+import Login from "../Page/Login/Login";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Dashboard from "../DashboradPage/Dashborad/Dashboard";
+import Register from "../Page/Register/Register";
+import Forget from "../Page/Forget/Forget";
 
 const router = createBrowserRouter([
   {
@@ -20,23 +24,43 @@ const router = createBrowserRouter([
       {
         path: "about",
         Component: About,
-      }
+      },
     ],
   },
   {
-    path: "/dashborad",
-    Component: DashboradLayout,
+    path: "/",
+    Component: LoginLayout,
+    errorElement: <Error></Error>,
     children: [
-        {
-            index: true,
-            Component: Dashborad,
-        },
-        {
-          path: "user",
-          Component: User,
-        }
+      {
+        path: "login",
+        Component: Login,
+      },
+      {
+        path: "register",
+        Component: Register,
+      },
+      {
+        path: "forget",
+        Component: Forget,
+      }
     ]
-  }
+  },
+  {
+    path: "/dashboard",
+    Component: DashboardLayout,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        index: true,
+        Component: Dashboard,
+      },
+      {
+        path: "user",
+        Component: User,
+      },
+    ],
+  },
 ]);
 
 export default router;

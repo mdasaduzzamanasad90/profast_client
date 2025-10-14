@@ -1,6 +1,6 @@
 
 
-const Dashborad = () => {
+const Dashboard = () => {
     return (
         <div>
            <h1>this is bashborad</h1>
@@ -8,4 +8,4 @@ const Dashborad = () => {
     );
 };
 
-export default Dashborad;
+export default Dashboard;

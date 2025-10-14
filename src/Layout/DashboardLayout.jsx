@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 
-const DashboradLayout = () => {
+const DashboardLayout = () => {
   return (
     <div>
         <h1>this is dashborad header </h1>
@@ -9,4 +9,4 @@ const DashboradLayout = () => {
   );
 };
 
-export default DashboradLayout;
+export default DashboardLayout;

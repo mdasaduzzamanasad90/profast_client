@@ -3,9 +3,10 @@ import Navbar from "../../ShareComponent/Navbar/Navbar";
 const Error = () => {
   return (
     <div className="h-screen">
-        <Navbar></Navbar>
-      <div className="flex items-center justify-center">
+      <Navbar></Navbar>
+      <div className="flex items-center justify-center bg-white md:mt-32 md:rounded-[40px]">
         <svg
+          data-aos="zoom-in-up"
           viewBox="0 0 598.382 600.717"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"

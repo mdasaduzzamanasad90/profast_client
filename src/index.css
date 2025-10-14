@@ -7,7 +7,7 @@
 }
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, dark;
+  themes: autumn --default, dark --prefersdark, dark;
 }
 
 
@@ -44,6 +44,12 @@ body {
 }
 
 .custom-button:hover {
+  background-color: #caeb66;       /* hover:bg-[#caeb66] */
+  color: black;                     /* hover:text-black */
+  box-shadow: 0 5px 15px #caeb66;  /* hover:shadow-[0_5px_15px_#caeb66] */
+  transform: translateY(-0.25rem); /* hover:-translate-y-1 */
+}
+.custom-button2 {
   background-color: #caeb66;       /* hover:bg-[#caeb66] */
   color: black;                     /* hover:text-black */
   box-shadow: 0 5px 15px #caeb66;  /* hover:shadow-[0_5px_15px_#caeb66] */
