@@ -1,4 +1,8 @@
+/* Urbanist */
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+/* inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* tailwind and daisy ui  */
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -27,6 +31,12 @@
 
 body {
   font-family: "Urbanist", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
 }

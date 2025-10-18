@@ -4,18 +4,31 @@ import ProfastLogo from "../ShareComponent/ProfastLogo/ProfastLogo";
 
 const LoginLayout = () => {
   return (
-    <div>
-      <div className="h-screen bg-gradient-to-r from-[#FAFDF0] to-white flex items-center justify-center">
-        <div className="md:max-w-7xl w-full mx-auto flex flex-col md:flex-row justify-between items-center bg-white shadow-xl rounded-2xl overflow-hidden">
-          <ProfastLogo />
+    <div className="inter">
+      <div className="min-h-screen bg-gradient-to-r from-[#FAFDF0] to-white flex items-center justify-center p-4">
+        <div className="w-full md:max-w-6xl lg:max-w-7xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row transition-all duration-500 ease-in-out">
           {/* Left Section */}
-          <Outlet></Outlet>
+          <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6">
+            <div
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-offset="0"
+              className="mb-4"
+            >
+              <ProfastLogo />
+            </div>
+            <Outlet />
+          </div>
+
           {/* Right Section */}
-          <div className="hidden md:flex w-1/2 bg-[#FAFDF0] justify-center items-center p-6">
+          <div
+            data-aos="fade-left"
+            className="hidden md:flex w-1/2 bg-gradient-to-br from-[#FAFDF0] to-[#F3F8E8] justify-center items-center p-8 relative overflow-hidden"
+          >
             <img
               src={authimage}
               alt="Authentication Illustration"
-              className="max-w-md drop-shadow-lg"
+              className="max-w-4xl drop-shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500 ease-in-out"
             />
           </div>
         </div>
