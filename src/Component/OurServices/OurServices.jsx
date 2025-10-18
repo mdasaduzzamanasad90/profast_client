@@ -8,7 +8,7 @@ import {
   FaUndoAlt,
 } from "react-icons/fa";
 
-const Services = () => {
+const OurServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -97,4 +97,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default OurServices;

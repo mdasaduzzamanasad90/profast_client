@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import ProfastLogo from "../ProfastLogo/ProfastLogo";
-
+import useAuth from "../../Hooks/UseAuth";
 
 const Navbar = () => {
+  const { user } = useAuth();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,8 +16,9 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", to: "/" },
     { name: "Services", to: "/services" },
-    { name: "About", to: "/about" },
-    { name: "Contact", to: "/contact" },
+    { name: "Coverage", to: "/coverage" },
+    { name: "About Us", to: "/aboutus" },
+    { name: "Pricing", to: "/pricing" },
   ];
 
   return (
@@ -129,9 +131,18 @@ const Navbar = () => {
               </svg>
             </label>
           </div>
-          <button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
-            Sign In
-          </button>
+          {user ? (
+            <Link to={"/login"}>
+              <button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
+                Sign In
+              </button>
+            </Link>
+          ) : (
+            <button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
+              Logout
+            </button>
+          )}
+
           <button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
             Be a Rider
           </button>
