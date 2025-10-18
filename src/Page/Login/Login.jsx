@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router";
 
 const Login = () => {
