@@ -36,6 +36,7 @@ const socialsigninandsignup =(provider)=>{
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       setuser(currentuser);
+      console.log("current user", currentuser);
       setloading(false);
     });
 
