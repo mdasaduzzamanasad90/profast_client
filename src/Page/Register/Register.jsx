@@ -1,10 +1,14 @@
 import { BiErrorCircle } from "react-icons/bi";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
-import useAuth from "../../Hooks/UseAuth";
 import uploadimg from "../../assets/images/image-upload-icon.png";
 import SocialRegister from "../../Component/Social/SocialRegister";
+import useAuth from "../../Hooks/useAuth";
+import { useState } from "react";
+import { IoEyeSharp } from "react-icons/io5";
+import { FaEyeSlash } from "react-icons/fa";
 const Register = () => {
+  const [eyes, seteyes] = useState(false);
   const {
     register,
     handleSubmit,
@@ -92,12 +96,12 @@ const Register = () => {
                   )}
                 </div>
                 {/* Password field */}
-                <div className="space-y-2">
+                <div className="space-y-2 relative">
                   <label className="label text-sm font-medium text-gray-600">
                     Password
                   </label>
                   <input
-                    type="password"
+                    type={eyes ? "text" : "password"}
                     {...register("password", {
                       required: true,
                       minLength: 6,
@@ -106,6 +110,19 @@ const Register = () => {
                     className="bg-white w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#94A3B8] focus:border-[#94A3B8] focus:ring-offset-2 focus:ring-offset-white transition-all duration-300 px-3 py-2"
                     placeholder="Enter your password"
                   />
+                  {eyes ? (
+                    <IoEyeSharp
+                      onClick={() => seteyes(!eyes)}
+                      size={15}
+                      className="absolute top-9 right-5 cursor-pointer"
+                    />
+                  ) : (
+                    <FaEyeSlash
+                      onClick={() => seteyes(!eyes)}
+                      size={15}
+                      className="absolute top-9 right-5 cursor-pointer"
+                    />
+                  )}
                   {/* error massages password required  */}
                   {errors.password?.type === "required" && (
                     <p className="flex items-center gap-2 text-red-500 text-xs font-medium mt-1 md:ml-2">
