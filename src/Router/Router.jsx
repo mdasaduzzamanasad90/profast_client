@@ -14,6 +14,8 @@ import Coverage from "../Page/Coverage/Coverage";
 import AboutUs from "../Page/AboutUs/AboutUs";
 import Services from "../Page/Services/Services";
 import BeARider from "../Page/BeARider/BeARider";
+import PrivateRouter from "./PrivateRouter";
+import Pricing from "../Page/Pricing/Pricing";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/trackorder",
         Component: TrackOrder,
+      },
+      {
+        path: "/pricing",
+        element:<PrivateRouter><Pricing></Pricing></PrivateRouter>
       },
       {
         path: "/bearider",

@@ -89,7 +89,7 @@ const BangladeshMap = () => {
         </div>
         <button
           type="submit"
-          className="btn bg-[#CAEB66] text-gray-800 font-semibold border-none px-6 py-2 rounded-xl shadow-md hover:bg-[#b8db58] hover:-translate-y-1 hover:shadow-lg focus:ring-2 focus:ring-[#CAEB66]/50 transition-all duration-500"
+          className="btn bg-[#CAEB66] text-gray-800 font-semibold border-none px-6 py-2 rounded-lg shadow-md hover:bg-[#b8db58] hover:-translate-y-1 hover:shadow-lg focus:ring-2 focus:ring-[#CAEB66]/50 transition-all duration-500"
         >
           Search
         </button>

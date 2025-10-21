@@ -5,8 +5,10 @@ import SocialLogin from "../../Component/Social/SocialLogin";
 import { useState } from "react";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
+import useAuth from "../../Hooks/UseAuth";
 
 const Login = () => {
+  const { login } = useAuth();
   const [eyes, seteyes] = useState(false);
   const {
     register,
@@ -15,7 +17,14 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+    login(data.email, data.password)
+      .then((Result) => {
+        console.log(Result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
