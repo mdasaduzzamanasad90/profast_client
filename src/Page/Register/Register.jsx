@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import uploadimg from "../../assets/images/image-upload-icon.png";
 import SocialRegister from "../../Component/Social/SocialRegister";
-import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
+import useAuth from "../../Hooks/UseAuth";
 const Register = () => {
   const [eyes, seteyes] = useState(false);
   const {

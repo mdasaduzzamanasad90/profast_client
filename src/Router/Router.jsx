@@ -9,6 +9,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../DashboradPage/Dashborad/Dashboard";
 import Register from "../Page/Register/Register";
 import Forget from "../Page/Forget/Forget";
+import TrackOrder from "../Page/TrackOrder/TrackOrder";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "/trackorder",
+        Component: TrackOrder,
       },
     ],
   },

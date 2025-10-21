@@ -21,6 +21,7 @@ const Navbar = () => {
     { name: "Home", to: "/" },
     { name: "Services", to: "/services" },
     { name: "Coverage", to: "/coverage" },
+    { name: "Track Order", to: "/trackorder" },
     { name: "About Us", to: "/aboutus" },
     { name: "Pricing", to: "/pricing" },
   ];
@@ -84,14 +85,14 @@ const Navbar = () => {
         </div>
 
         {/* Navbar Center */}
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex lg:mr-10">
           <ul className="menu menu-horizontal gap-4 px-1">
             {navItems.map((item) => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
                   className={({ isActive }) =>
-                    `md:text-lg font-medium px-3 py-2 rounded-md transition-all duration-200 ${
+                    `md:text-base font-medium px-3 py-2 rounded-md transition-all duration-200 ${
                       isActive
                         ? "text-[#CAEB66] border-b-2 border-[#CAEB66]"
                         : "hover:text-[#CAEB66]"
