@@ -10,6 +10,10 @@ import Dashboard from "../DashboradPage/Dashborad/Dashboard";
 import Register from "../Page/Register/Register";
 import Forget from "../Page/Forget/Forget";
 import TrackOrder from "../Page/TrackOrder/TrackOrder";
+import Coverage from "../Page/Coverage/Coverage";
+import AboutUs from "../Page/AboutUs/AboutUs";
+import Services from "../Page/Services/Services";
+import BeARider from "../Page/BeARider/BeARider";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +26,24 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
+        path: "/services",
+        Component: Services,
+      },
+      {
+        path: "/coverage",
+        Component: Coverage,
+      },
+      {
+        path: "/aboutus",
+        Component: AboutUs,
+      },
+      {
         path: "/trackorder",
         Component: TrackOrder,
+      },
+      {
+        path: "/bearider",
+        Component: BeARider,
       },
     ],
   },

@@ -4,12 +4,12 @@ import ProfastLogo from "../ProfastLogo/ProfastLogo";
 import useAuth from "../../Hooks/UseAuth";
 
 const Navbar = () => {
-  const { user, logout} = useAuth();
+  const { user, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
 
- const logouthandle = () =>{
-  logout()
- }
+  const logouthandle = () => {
+    logout();
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -21,8 +21,8 @@ const Navbar = () => {
     { name: "Home", to: "/" },
     { name: "Services", to: "/services" },
     { name: "Coverage", to: "/coverage" },
-    { name: "Track Order", to: "/trackorder" },
     { name: "About Us", to: "/aboutus" },
+    { name: "Track Order", to: "/trackorder" },
     { name: "Pricing", to: "/pricing" },
   ];
 
@@ -137,7 +137,10 @@ const Navbar = () => {
             </label>
           </div>
           {user ? (
-            <button onClick={logouthandle} className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
+            <button
+              onClick={logouthandle}
+              className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1"
+            >
               Logout
             </button>
           ) : (
@@ -148,9 +151,9 @@ const Navbar = () => {
             </Link>
           )}
 
-          <button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
+          <Link to={"/bearider"}><button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
             Be a Rider
-          </button>
+          </button></Link>
         </div>
       </nav>
     </header>
