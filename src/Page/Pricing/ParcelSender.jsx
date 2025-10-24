@@ -1,4 +1,5 @@
 import { BiErrorCircle } from "react-icons/bi";
+import useAuth from "../../Hooks/useAuth";
 
 const ParcelSender = ({
   register,
@@ -9,6 +10,7 @@ const ParcelSender = ({
   senderPickUpDistricts,
   senderPickUpRigons,
 }) => {
+  const {user} = useAuth();
   return (
     <div className="rounded-xl p-6 bg-gray-50 shadow-lg">
       <h3 className="text-lg font-semibold mb-4 text-gray-700">
@@ -25,6 +27,7 @@ const ParcelSender = ({
             {...register("senderName", { required: true })}
             placeholder="Sender Name"
             className="input input-bordered w-full"
+            defaultValue={user.displayName}
           />
           {/* error massages parcel required */}
           {errors.senderName?.type === "required" && (

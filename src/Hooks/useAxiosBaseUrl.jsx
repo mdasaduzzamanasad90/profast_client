@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosbaseurl = axios.create({
-     baseURL: 'https://some-domain.com/api/'
+     baseURL: 'http://localhost:3000'
 })
 const useAxiosBaseUrl = () => {
     return axiosbaseurl;

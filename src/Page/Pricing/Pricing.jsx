@@ -6,16 +6,21 @@ import ParcelSenderAndReceiver from "./ParcelSenderAndReceiver";
 import ParcelFooter from "./ParcelFooter";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import PricingRule from "./PricingRule";
+import useAxiosBaseUrl from "../../Hooks/useAxiosBaseUrl";
+import useAuth from "../../Hooks/useAuth";
 const Pricing = () => {
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
     // control remove করে দিলাম - এটি ব্যবহার করা হচ্ছিল না
   } = useForm();
   const [regionData, setregionData] = useState([]);
   const [warehouseList, setwarehouseList] = useState([]);
+  const axiosbaseurl = useAxiosBaseUrl();
 
   // region get data function
   const reginonhandlefunc = () => {
@@ -64,7 +69,7 @@ const Pricing = () => {
     .flatMap((item) => item.covered_area || []);
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
+    // console.log("Form Data:", data);
 
     const {
       parcelType,
@@ -139,7 +144,7 @@ const Pricing = () => {
             </tr>
           `;
         } else {
-          totalCost = (weight * 40 )+ 40;
+          totalCost = weight * 40 + 40;
           costDetails = `
             <tr>
               <td><strong>Parcel Type</strong></td>
@@ -210,11 +215,38 @@ const Pricing = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "✅ Success!",
-          text: "Your parcel is now pending for processing.",
-          icon: "success",
-          confirmButtonColor: "#10b981",
+          title: "⏳ Processing...",
+          allowOutsideClick: false,
+          didOpen: () => Swal.showLoading(),
         });
+        axiosbaseurl
+          .post("/parcels", { ...data, email: user.email })
+          .then((res) => {
+            console.log(res.data);
+
+            // শুধুমাত্র POST সফল হলে Swal দেখানো
+            Swal.fire({
+              title: "✅ Success!",
+              text: "Your parcel is now pending for processing.",
+              icon: "success",
+              confirmButtonColor: "#10b981",
+            });
+            reset();
+          })
+          .catch((err) => {
+            console.error(
+              "Error adding parcel:",
+              err.response?.data || err.message
+            );
+
+            // Error হলে Swal দেখানো
+            Swal.fire({
+              title: "❌ Failed!",
+              text: "There was an error adding your parcel. Please try again.",
+              icon: "error",
+              confirmButtonColor: "#ef4444",
+            });
+          });
       }
     });
   };
@@ -226,7 +258,9 @@ const Pricing = () => {
           Add New Parcel
         </h1>
 
-        <div className="mb-10"><PricingRule></PricingRule></div>
+        <div className="mb-10">
+          <PricingRule></PricingRule>
+        </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
           {/* ===== Parcel Info ===== */}
