@@ -1,12 +1,14 @@
 import { BiErrorCircle } from "react-icons/bi";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import uploadimg from "../../assets/images/image-upload-icon.png";
 import SocialRegister from "../../Component/Social/SocialRegister";
 import { useState } from "react";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../Hooks/UseAuth";
+import { updateProfile } from "firebase/auth";
+import useNavigateYourLocation from "../../Hooks/useNavigateYourLocation";
 const Register = () => {
   const [eyes, seteyes] = useState(false);
   const {
@@ -16,13 +18,26 @@ const Register = () => {
   } = useForm();
 
   const { createuser } = useAuth();
+  const navigate = useNavigate()
+  const from = useNavigateYourLocation();
 
   const onSubmit = (data) => {
     // console.log(data);
     // console.log(createuser);
     createuser(data.email, data.password)
       .then((Result) => {
-        console.log(Result.user);
+        // console.log(Result.user);
+        const user = Result.user;
+        
+        // firebase add user name 
+        updateProfile(user, { displayName: data.name })
+          .then(() => {
+            console.log("Name updated:", data.name );
+          })
+          .catch((error) => {
+            console.error("Error updating name:", error);
+          });
+          navigate(from);
       })
       .catch((error) => {
         console.log(error);

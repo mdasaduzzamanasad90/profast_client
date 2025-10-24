@@ -1,15 +1,18 @@
 import { BiErrorCircle } from "react-icons/bi";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import SocialLogin from "../../Component/Social/SocialLogin";
 import { useState } from "react";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../Hooks/UseAuth";
+import useNavigateYourLocation from "../../Hooks/useNavigateYourLocation";
 
 const Login = () => {
   const { login } = useAuth();
   const [eyes, seteyes] = useState(false);
+  const navigate = useNavigate();
+ const from = useNavigateYourLocation();
   const {
     register,
     handleSubmit,
@@ -21,6 +24,7 @@ const Login = () => {
     login(data.email, data.password)
       .then((Result) => {
         console.log(Result.user);
+        navigate(from);
       })
       .catch((error) => {
         console.log(error);

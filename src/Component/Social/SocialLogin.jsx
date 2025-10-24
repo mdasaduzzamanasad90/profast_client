@@ -5,17 +5,22 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import useAuth from "../../Hooks/UseAuth";
+import { useNavigate } from "react-router";
+import useNavigateYourLocation from "../../Hooks/useNavigateYourLocation";
 const googleprovider = new GoogleAuthProvider();
 const facebookprovider = new FacebookAuthProvider();
 const githubprovider = new GithubAuthProvider();
 
 const SocialLogin = () => {
   const { socialsigninandsignup } = useAuth();
+  const navigate = useNavigate();
+  const from = useNavigateYourLocation();
 
   const loginhandle = (provider) => {
     socialsigninandsignup(provider)
       .then((result) => {
         console.log(result.user);
+        navigate(from);
       })
       .catch((error) => {
         console.error(error);
