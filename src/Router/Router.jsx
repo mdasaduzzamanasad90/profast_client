@@ -2,10 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Layout from "../Layout/Layout";
 import Home from "../Page/Home/Home";
 import Error from "../Page/Error/Error";
-import User from "../DashboradPage/User/User";
 import LoginLayout from "../Layout/LoginLayout";
 import Login from "../Page/Login/Login";
-import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../DashboradPage/Dashborad/Dashboard";
 import Register from "../Page/Register/Register";
 import Forget from "../Page/Forget/Forget";
@@ -16,6 +14,8 @@ import Services from "../Page/Services/Services";
 import BeARider from "../Page/BeARider/BeARider";
 import PrivateRouter from "./PrivateRouter";
 import Pricing from "../Page/Pricing/Pricing";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Payment from "../DashboradPage/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    Component: DashboardLayout,
+    element: <PrivateRouter><DashboardLayout/></PrivateRouter>,
     errorElement: <Error></Error>,
     children: [
       {
@@ -82,8 +82,8 @@ const router = createBrowserRouter([
         Component: Dashboard,
       },
       {
-        path: "user",
-        Component: User,
+        path: "payment/:id",
+        Component: Payment,
       },
     ],
   },

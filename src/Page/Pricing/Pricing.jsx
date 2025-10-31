@@ -86,6 +86,8 @@ const Pricing = () => {
 
     let costDetails = "";
     let totalCost = 0;
+    // console.log(totalCost)
+    
 
     if (parcelType === "Document") {
       totalCost = isWithinCity ? 60 : 80;
@@ -220,7 +222,7 @@ const Pricing = () => {
           didOpen: () => Swal.showLoading(),
         });
         axiosbaseurl
-          .post("/parcels", { ...data, email: user.email })
+          .post("/parcels", { ...data, email: user.email, totalCost })
           .then((res) => {
             console.log(res.data);
 

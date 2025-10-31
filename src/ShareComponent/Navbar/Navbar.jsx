@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router";
 import ProfastLogo from "../ProfastLogo/ProfastLogo";
 import useAuth from "../../Hooks/UseAuth";
+import { MdDashboard } from "react-icons/md";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -77,6 +78,19 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               ))}
+              <li>
+                <NavLink to={"/dashboard"}
+                  className={({ isActive }) =>
+                    `block px-3 py-2 rounded-md transition ${
+                      isActive
+                        ? "text-[#CAEB66] font-semibold"
+                        : "hover:text-[#CAEB66]"
+                    }`
+                  }
+                >
+                  <MdDashboard className="lg:text-3xl text-xl" />
+                </NavLink>
+              </li>
             </ul>
           </div>
 
@@ -108,7 +122,10 @@ const Navbar = () => {
 
         {/* Navbar End */}
         <div className="navbar-end gap-3">
-          <div className="text-asad">
+          <div className="text-asad lg:flex justify-center items-center gap-4">
+            <Link to={"/dashboard"} className="hidden lg:block">
+              <MdDashboard className="lg:text-3xl text-xl" />
+            </Link>
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
               <input
@@ -151,9 +168,11 @@ const Navbar = () => {
             </Link>
           )}
 
-          <Link to={"/bearider"}><button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
-            Be a Rider
-          </button></Link>
+          <Link to={"/bearider"}>
+            <button className="border-2 md:w-28 border-[#caeb66] text-[#caeb66] font-semibold py-3 rounded-lg transition duration-500 ease-in-out hover:bg-[#caeb66] hover:text-black hover:shadow-[0_5px_15px_#caeb66] hover:-translate-y-1">
+              Be a Rider
+            </button>
+          </Link>
         </div>
       </nav>
     </header>
